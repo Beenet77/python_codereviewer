@@ -1,8 +1,13 @@
 import streamlit as st
 import google.generativeai as ai
+from dotenv import load_dotenv
+import os 
+load_dotenv()
+GEMINI_API_KEY=os.getenv( "GEMINI_API_KEY")
 
 # Configure Google GenAI API
-ai.configure(api_key="AIzaSyDXYaDfwMEw49jVzfZFpO5y_cvUxT4gXPw")  
+
+ai.configure(api_key=GEMINI_API_KEY)  
 
 # Define system prompt for AI
 sys_prompt = """You are an AI assistant for Python code review. 
